@@ -16,8 +16,8 @@
 title: Jireh
 email: hungryjireh@gmail.com
 description: Portfolio, CV and other personal content of Jireh, who is currently based in Singapore.
-baseurl: "portfolio" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/portfolio" # the subpath of your site, e.g. /blog
+url: "hungryjireh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: hungryjireh
 github_username:  hungryjireh
 

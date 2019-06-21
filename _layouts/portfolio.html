@@ -10,18 +10,18 @@
     <meta property="og:locale" content="en_US" />
     <meta name="description" content="{{ page.description }}" />
     <meta property="og:description" content="{{ page.description }}" />
-    <link rel="canonical" href="http://localhost:4000/" />
-    <meta property="og:url" content="http://localhost:4000/" />
+    <link rel="canonical" href="{{site.url}}{{ site.baseurl }}" />
+    <meta property="og:url" content="{{site.url}}{{ site.baseurl }}" />
     <meta property="og:site_name" content="{{ page.title }}" />
     <script type="application/ld+json">
-    {"url":"http://localhost:4000/","headline":"{{ page.title }}","name":"{{ page.title }}","description":"{{ page.description }}","@type":"WebSite","@context":"https://schema.org"}</script>
+    {"url":"{{site.url}}{{ site.baseurl }}","headline":"{{ page.title }}","name":"{{ page.title }}","description":"{{ page.description }}","@type":"WebSite","@context":"https://schema.org"}</script>
     <!-- End Jekyll SEO tag -->
     {% for file in site.static_files %}
         {% if file.css and file.name == "page_update.css" %}
         <link rel="stylesheet" href="{{ file.path }}">
         {% endif %}
     {% endfor %}
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="{{ page.title }}" />
+    <link type="application/atom+xml" rel="alternate" href="{{site.url}}{{ site.baseurl }}/feed.xml" title="{{ page.title }}" />
 </head>
 <body>
     <header class="site-header" role="banner">
