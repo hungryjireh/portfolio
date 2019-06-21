@@ -17,8 +17,8 @@
     {"url":"{{site.url}}{{ site.baseurl }}","headline":"{{ page.title }}","name":"{{ page.title }}","description":"{{ page.description }}","@type":"WebSite","@context":"https://schema.org"}</script>
     <!-- End Jekyll SEO tag -->
     {% for file in site.static_files %}
-        {% if file.css and file.name == "page_update.css" %}
-        <link rel="stylesheet" href="{{ file.path }}">
+        {% if file.name == "page_update.css" %}
+        <link rel="stylesheet" href="{{site.baseurl}}/{{ file.path }}">
         {% endif %}
     {% endfor %}
     <link type="application/atom+xml" rel="alternate" href="{{site.url}}{{ site.baseurl }}/feed.xml" title="{{ page.title }}" />
@@ -27,8 +27,8 @@
     <header class="site-header" role="banner">
         <div class="wrapper">
             {% for file in site.static_files %}
-            {% if file.img and file.name == "jireh.png" %}
-                <a class="site-title" rel="author" href="/"><img src="{{ file.path }}" alt="logo" class="site-logo"></a>
+            {% if file.name == "jireh.png" %}
+                <a class="site-title" rel="author" href="{{site.baseurl}}/"><img src="{{site.baseurl}}/{{ file.path }}" alt="logo" class="site-logo"></a>
             {% endif %}
             {% endfor %}
             <nav class="site-nav">
@@ -42,7 +42,7 @@
                 </label>
                 <div class="trigger">
                     {% for page in site.pages %}
-                        <a class="page-link" href="{{ page.url }}">{{ page.title }}</a>
+                        <a class="page-link" href="{{site.baseurl}}{{ page.url }}">{{ page.title }}</a>
                     {% endfor %}
                 </div>
             </nav>
@@ -56,7 +56,7 @@
             {% if page.categories[0] == "portfolio" %}
                 <p class="post-category">in <a href="{% link portfolio.md %}">{{ page.categories }}</a></p>
             {% else %}
-                <p class="post-category">in {{ page.categories }}</p>
+                <p class="post-category">in {{page.categories}}</p>
             {% endif %}
             {% if page.author == "Jireh" %}
                 <p class="post-author">by <a href="{% link index.md %}">{{ page.author }}</a></p>
@@ -77,14 +77,14 @@
             <div class="footer-col">
                 <ul class="social-media-list">
                 {% for file in site.static_files %}
-                    {% if file.svg and file.name == "instagram.svg" %}
-                        <a href="https://instagram.com/hungryjireh"><img class="svg-icon" src="{{ file.path }}"></img></a>
-                    {% elsif file.svg and file.name == "gmail.svg" %}
-                        <a href="mailto:hungryjireh@gmail.com"><img class="svg-icon" src="{{ file.path }}"></img></a>
-                    {% elsif file.svg and file.name == "linkedin.svg" %}
-                        <a href="https://sg.linkedin.com/in/jireh-tan-23a324136"><img class="svg-icon" src="{{ file.path }}"></img></a>
-                    {% elsif file.svg and file.name == "github.svg" %}
-                        <a href="https://github.com/hungryjireh"><img class="svg-icon" src="{{ file.path }}"></img></a>
+                    {% if file.name == "instagram.svg" %}
+                        <a href="https://instagram.com/hungryjireh"><img class="svg-icon" src="{{site.baseurl}}/{{ file.path }}"></img></a>
+                    {% elsif file.name == "gmail.svg" %}
+                        <a href="mailto:hungryjireh@gmail.com"><img class="svg-icon" src="{{site.baseurl}}/{{ file.path }}"></img></a>
+                    {% elsif file.name == "linkedin.svg" %}
+                        <a href="https://sg.linkedin.com/in/jireh-tan-23a324136"><img class="svg-icon" src="{{site.baseurl}}/{{ file.path }}"></img></a>
+                    {% elsif file.name == "github.svg" %}
+                        <a href="https://github.com/hungryjireh"><img class="svg-icon" src="{{site.baseurl}}/{{ file.path }}"></img></a>
                     {% endif %}
                 {% endfor %}
                 </ul>
@@ -92,18 +92,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="wrapper">
-        <div class="footer-col-wrapper">
-            <div class="footer-col">
-                <p class="footer-title">&copy; Natalie. </p>
-            </div>
-        </div>
-    </div> -->
-
 </footer>
-{% if jekyll.environment == 'production' %}
-{% include analytics.html %}
-{% endif %}
 </body>
 
 </html>

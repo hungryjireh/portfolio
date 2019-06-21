@@ -30,23 +30,23 @@ plugins:
 defaults:
   -
     scope:
-      path:
+      path: 
       type: "posts"
     values:
   -
     scope:
-      path: "assets/img"
+      path: "/portfolio/assets/img"
     values:
       img: true
   -
     scope:
-      path: "assets/css"
+      path: "/portfolio/assets/css"
     values:
       css: true
   
   -
     scope:
-      path: "assets/svg"
+      path: /portfolio/"assets/svg"
     values:
       svg: true
 

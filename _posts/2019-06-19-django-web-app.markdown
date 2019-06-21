@@ -20,58 +20,58 @@ The main features of this particular web application are shown below. Do note th
 
 * Login Page  
 
-![Login Page](/assets/img/django/django-login.png)
+![Login Page](/portfolio/assets/img/django/django-login.png)
 
 * Reset Password Page  
 
-![Forget Password Page](/assets/img/django/forget-password.png)  
+![Forget Password Page](/portfolio/assets/img/django/forget-password.png)  
 
 * Reset Password Success  
 
-![Reset Password Success Page](/assets/img/django/forget-password-success.png)  
+![Reset Password Success Page](/portfolio/assets/img/django/forget-password-success.png)  
 
 * Change Password Page  
 
-![Change Password Page](/assets/img/django/change-password.png)
+![Change Password Page](/portfolio/assets/img/django/change-password.png)
 
 {:start="2"}
 **2. Administrator Pages** 
 
-![Administrator Management Page](/assets/img/django/admin-directory.png)
+![Administrator Management Page](/portfolio/assets/img/django/admin-directory.png)
 
 * Create new users  
 
 * Manage existing users (for administrators only)  
 
-![User Management Page](/assets/img/django/user-management.png)  
+![User Management Page](/portfolio/assets/img/django/user-management.png)  
 
 * Manage existing administrators (for super-administrators only)  
 
-![Staff Management Page](/assets/img/django/staff-management.png)  
+![Staff Management Page](/portfolio/assets/img/django/staff-management.png)  
 
 * Manage existing super-administrators (for super-administrators only)  
 
-![Superstaff Management Page](/assets/img/django/superstaff-management.png)
+![Superstaff Management Page](/portfolio/assets/img/django/superstaff-management.png)
 
 * Update permissions
 * Populate database via .xlsx file  
 
-![Upload Excel Page](/assets/img/django/upload-excel.png)  
+![Upload Excel Page](/portfolio/assets/img/django/upload-excel.png)  
 
 {:start="3"}
 **3. Subscription Page: for existing subscribers to purchase products**
 
-![Subscription Page](/assets/img/django/subscribe.png)
+![Subscription Page](/portfolio/assets/img/django/subscribe.png)
 
 {:start="4"}
 **4. Contact Us Page**  
 
-![Contact Page](/assets/img/django/contact.png)  
+![Contact Page](/portfolio/assets/img/django/contact.png)  
 
 {:start="5"}
 **5. Content Page: articles were scraped from the main content website and displayed here.**  
 
-![Blog Page](/assets/img/django/blog.png)  
+![Blog Page](/portfolio/assets/img/django/blog.png)  
 
 
 [50-003]: https://istd.sutd.edu.sg/undergraduate/courses/50003-elements-of-software-construction
