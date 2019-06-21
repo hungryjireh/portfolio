@@ -22,7 +22,9 @@
         {% endif %}
     {% endfor %}
     <link type="application/atom+xml" rel="alternate" href="{{site.url}}{{ site.baseurl }}/feed.xml" title="{{ page.title }}" />
+    {% if jekyll.environment == 'production' %}
     {% include analytics.html %}
+    {% endif %}
 </head>
 <body>
     <header class="site-header" role="banner">
