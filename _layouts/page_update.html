@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+    <title>{{ page.title }}</title>
+    <meta name="generator" content="Jekyll v3.8.5" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="{{ page.description }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="{{ page.title }}" />
+    <script type="application/ld+json">
+    {"url":"http://localhost:4000/","headline":"{{ page.title }}","name":"{{ page.title }}","description":"{{ page.description }}","@type":"WebSite","@context":"https://schema.org"}</script>
+    <!-- End Jekyll SEO tag -->
+    {% for file in site.static_files %}
+        {% if file.css and file.name == "page_update.css" %}
+        <link rel="stylesheet" href="{{ file.path }}">
+        {% endif %}
+    {% endfor %}
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="{{ page.title }}" />
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="wrapper">
+            {% for file in site.static_files %}
+            {% if file.img and file.name == "jireh.png" %}
+                <a class="site-title" rel="author" href="/"><img src="{{ file.path }}" alt="logo" class="site-logo"></a>
+            {% endif %}
+            {% endfor %}
+            <nav class="site-nav">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                    <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+                    </svg>
+                </span>
+                </label>
+                <div class="trigger">
+                    {% for page in site.pages %}
+                        <a class="page-link" href="{{ page.url }}">{{ page.title }}</a>
+                    {% endfor %}
+                </div>
+                
+            </nav>
+        </div>
+    </header>
+
+<main class="page-content" aria-label="Content">
+    <div class="page-banner">
+        <div class="wrapper row">
+            <div class="home column">
+                <h2 id="about-header-1">I write - </h2>
+                <h2 id="about-header-2">Nowadays code, and lengthy articles from time to time. </h2>
+                <p class="about-description">{{ page.content | markdownify}}</p>
+                {% for page in site.pages %}
+                    {% if page.title == "PORTFOLIO" %}
+                    <button id="about-button" onclick="location.href='{{ page.url }}'">VIEW PORTFOLIO</button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="home-image column">
+                {% for file in site.static_files %}
+                    {% if file.img and file.name == "jireh_display.png" %}
+                        <img src="{{ file.path }}" alt="logo" id="banner-image">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="home-content">
+        <h3 class="home-content-text">Want to build a website? <a href="mailto:hungryjireh@gmail.com">Drop me an email.</a></h3>
+    </div>
+</main>
+
+<footer class="site-footer h-card">
+    <data class="u-url" href="/"></data>
+
+    <div class="wrapper">
+        <div class="footer-col-wrapper">
+            <div class="footer-col">
+                <ul class="social-media-list">
+                {% for file in site.static_files %}
+                    {% if file.svg and file.name == "instagram.svg" %}
+                        <a href="https://instagram.com/hungryjireh"><img class="svg-icon" src="{{ file.path }}"></img></a>
+                    {% elsif file.svg and file.name == "gmail.svg" %}
+                        <a href="mailto:hungryjireh@gmail.com"><img class="svg-icon" src="{{ file.path }}"></img></a>
+                    {% elsif file.svg and file.name == "linkedin.svg" %}
+                        <a href="https://sg.linkedin.com/in/jireh-tan-23a324136"><img class="svg-icon" src="{{ file.path }}"></img></a>
+                    {% elsif file.svg and file.name == "github.svg" %}
+                        <a href="https://github.com/hungryjireh"><img class="svg-icon" src="{{ file.path }}"></img></a>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="wrapper">
+        <div class="footer-col-wrapper">
+            <div class="footer-col">
+                <p class="footer-title">&copy; Natalie. </p>
+            </div>
+        </div>
+    </div> -->
+
+</footer>
+{% if jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
+</body>
+
+</html>
