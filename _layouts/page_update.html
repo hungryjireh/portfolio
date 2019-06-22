@@ -64,7 +64,7 @@
                 <p class="about-description">{{ page.content | markdownify}}</p>
                 {% for page in site.pages %}
                     {% if page.title == "PORTFOLIO" %}
-                    <button id="about-button" onclick="location.href='{{ page.url }}'">VIEW PORTFOLIO</button>
+                    <button id="about-button" onclick="location.href='{{site.baseurl}}{{ page.url }}'">VIEW PORTFOLIO</button>
                     {% endif %}
                 {% endfor %}
             </div>
