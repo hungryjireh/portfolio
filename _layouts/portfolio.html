@@ -72,7 +72,7 @@
                     <div class="p-column">
                         <div class="p-django">
                             {% for file in site.static_files %}
-                                {% if file.name == "django-login.png" %}
+                                {% if file.name == "django-thumbnail.png" %}
                                     <img src="{{site.baseurl}}/{{ file.path }}" class="django-login-image" />
                                 {% endif %}
                             {% endfor %}
@@ -91,42 +91,56 @@
                 </a>
                 {% endif %}
             {% endfor %}
-            <!-- <div class="p-column">
-                <div class="p-django">
-                    {% for file in site.static_files %}
-                        {% if file.img and file.name == "django-login.png" %}
-                            <img src="{{ file.path }}" class="django-login-image" />
-                        {% endif %}
-                    {% endfor %}
-                    <div class="normal">
-                        <div class="text"> 
+            {% for post in site.posts %}
+                {% if post.title == "Apple Stock News Website Redesign" %}
+                <a href="{{site.baseurl}}{{post.url}}">
+                    <div class="p-column">
+                        <div class="p-django">
+                            {% for file in site.static_files %}
+                                {% if file.name == "aapl-thumbnail.png" %}
+                                    <img src="{{site.baseurl}}/{{ file.path }}" class="aapl-home-image" />
+                                {% endif %}
+                            {% endfor %}
+                            <div class="normal">
+                                <div class="text"> 
+                                    Apple Stock News Website Redesign
+                                </div>
+                            </div>
+                            <div class="hover">
+                                <div class="text">
+                                    Apple Stock News Website Redesign
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="hover">
-                        <div class="text">
-                            Django Web Application
+                </a>
+                {% endif %}
+            {% endfor %}
+            {% for post in site.posts %}
+                {% if post.title == "ALESCE Website" %}
+                <a href="{{site.baseurl}}{{post.url}}">
+                    <div class="p-column">
+                        <div class="p-django">
+                            {% for file in site.static_files %}
+                                {% if file.name == "alesce-thumbnail.png" %}
+                                    <img src="{{site.baseurl}}/{{ file.path }}" class="alesce-home-image" />
+                                {% endif %}
+                            {% endfor %}
+                            <div class="normal">
+                                <div class="text"> 
+                                    ALESCE Website
+                                </div>
+                            </div>
+                            <div class="hover">
+                                <div class="text">
+                                    ALESCE Website
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="p-column">
-                <div class="p-django">
-                    {% for file in site.static_files %}
-                        {% if file.img and file.name == "django-login.png" %}
-                            <img src="{{ file.path }}" class="django-login-image" />
-                        {% endif %}
-                    {% endfor %}
-                    <div class="normal">
-                        <div class="text"> 
-                        </div>
-                    </div>
-                    <div class="hover">
-                        <div class="text">
-                            Django Web Application
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+                </a>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
     

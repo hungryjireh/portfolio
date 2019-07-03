@@ -59,12 +59,12 @@
         <div class="wrapper">
             <h2 class="post-title">{{ page.title }}</h2>
             {% if page.categories[0] == "portfolio" %}
-                <p class="post-category">in <a href="{% link portfolio.md %}">{{ page.categories }}</a></p>
+                <p class="post-category">in <a href="{{ site.baseurl }}{% link portfolio.md %}">{{ page.categories }}</a></p>
             {% else %}
                 <p class="post-category">in {{page.categories}}</p>
             {% endif %}
             {% if page.author == "Jireh" %}
-                <p class="post-author">by <a href="{% link index.md %}">{{ page.author }}</a></p>
+                <p class="post-author">by <a href="{{ site.baseurl }}{% link index.md %}">{{ page.author }}</a></p>
             {% else %}
                 <p class="post-author">by {{ page.author }}</p>
             {% endif %}

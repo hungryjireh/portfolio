@@ -1,0 +1,35 @@
+---
+layout: post_update
+title:  "ALESCE Website"
+date:   2019-07-01 22:04:50 +0300
+categories: portfolio
+author: Jireh
+---
+
+As the Operations Director of ALESCE, I was tasked to build the main page for ALESCE. My choice of framework - though limited in scope and functionality - was Bootstrap, which is a combination of HTML, CSS and a bit of jQuery for the website interactions.
+
+Though the ALESCE website will most probably be ported over to Wordpress or another CMS framework later on, here is the website that we have been using for the past few months. This website can be found at [https://www.alesce.co][alesce].
+
+---
+&nbsp;
+
+**1. Home Page**  
+&nbsp;
+![Home Page](/portfolio/assets/img/alesce/alesce-home.png)  
+
+{:start="2"}
+**2. Blog Page**  
+&nbsp;
+![Blog Page](/portfolio/assets/img/alesce/alesce-blog.png)   
+
+{:start="3"}
+**3. Shop Page**  
+&nbsp;
+![Algorithm Page](/portfolio/assets/img/alesce/alesce-shop.png)  
+
+{:start="4"}
+**4. Shop Item Page**  
+&nbsp;
+![News Page](/portfolio/assets/img/alesce/alesce-shop_item.png)  
+
+[alesce]: https://www.alesce.co
