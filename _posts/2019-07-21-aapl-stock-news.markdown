@@ -3,6 +3,7 @@ layout: post_update
 title:  "Apple Stock News Website Redesign"
 date:   2019-07-21 21:34:40 +0300
 categories: portfolio
+img_title: aapl_thumbnail.png
 author: Jireh
 ---
 

@@ -3,6 +3,7 @@ layout: post_update
 title:  "ALESCE Website"
 date:   2019-07-01 22:04:50 +0300
 categories: portfolio
+img_title: alesce-thumbnail.png
 author: Jireh
 ---
 

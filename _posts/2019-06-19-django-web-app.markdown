@@ -3,6 +3,7 @@ layout: post_update
 title:  "Django Web Application"
 date:   2019-06-19 20:01:40 +0300
 categories: portfolio
+img_title: django-thumbnail.png
 author: Jireh
 ---
 
