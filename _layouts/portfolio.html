@@ -97,7 +97,7 @@
                     <div class="p-column">
                         <div class="p-django">
                             {% for file in site.static_files %}
-                                {% if file.name == "aapl-thumbnail.png" %}
+                                {% if file.name == "aapl_thumbnail.png" %}
                                     <img src="{{site.baseurl}}/{{ file.path }}" class="aapl-home-image" />
                                 {% endif %}
                             {% endfor %}

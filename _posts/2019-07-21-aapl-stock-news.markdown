@@ -1,7 +1,7 @@
 ---
 layout: post_update
 title:  "Apple Stock News Website Redesign"
-date:   2019-07-22 12:34:40 +0300
+date:   2019-07-21 21:34:40 +0300
 categories: portfolio
 author: Jireh
 ---
@@ -12,54 +12,54 @@ Elementor is predominantly a drag-and-drop site builder, with a focus on design 
 
 Since the main purpose of the website is to direct customers to purchase the packages that they offer, I had to ensure that users were sufficiently interested in what they were looking at to continue browsing the site, as well as to ultimately be directed to the "Pricing" page.
 
-The website is currently live at [https://apple-stock-news.com][apple-stock-news] The main pages of the website can be found below.  
+The website is currently live at [https://apple-stock-news.com][apple-stock-news]. The main pages of the website can be found below.  
 
 ---
 &nbsp;
 
 **1. Home Page**  
 &nbsp;
-![Home Page](/portfolio/assets/img/aapl_stock_news/aapl-home.png)  
+![Home Page](/portfolio/assets/img/aapl_stock_news/aapl_home.png)  
 
 {:start="2"}
 **2. About Page** 
 &nbsp;
-![About Page](/portfolio/assets/img/aapl_stock_news/aapl-about.png)  
+![About Page](/portfolio/assets/img/aapl_stock_news/aapl_about.png)  
 
 {:start="3"}
 **3. Algorithm Page** 
 &nbsp;
-![Algorithm Page](/portfolio/assets/img/aapl_stock_news/aapl-algorithm.png)  
+![Algorithm Page](/portfolio/assets/img/aapl_stock_news/aapl_algorithm.png)  
 
 {:start="4"}
 **4. News Page** 
 &nbsp;
-![News Page](/portfolio/assets/img/aapl_stock_news/aapl-news.png)  
+![News Page](/portfolio/assets/img/aapl_stock_news/aapl_news.png)  
 
 {:start="5"}
 **5. Forecasts Page** 
 &nbsp;
-![Forecasts Page](/portfolio/assets/img/aapl_stock_news/aapl-forecasts.png)  
+![Forecasts Page](/portfolio/assets/img/aapl_stock_news/aapl_forecasts.png)  
 
 {:start="6"}
 **6. Articles Page** 
 &nbsp;
-![Articles Page](/portfolio/assets/img/aapl_stock_news/aapl-articles.png)  
+![Articles Page](/portfolio/assets/img/aapl_stock_news/aapl_articles.png)  
 
 {:start="7"}
 **7. Pricing Page** 
 &nbsp;
-![Pricing Page](/portfolio/assets/img/aapl_stock_news/aapl-pricing.png)  
+![Pricing Page](/portfolio/assets/img/aapl_stock_news/aapl_pricing.png)  
 
 {:start="8"}
 **8. FAQ Page** 
 &nbsp;
-![FAQ Page](/portfolio/assets/img/aapl_stock_news/aapl-faq.png)  
+![FAQ Page](/portfolio/assets/img/aapl_stock_news/aapl_faq.png)  
 
 {:start="9"}
 **9. Careers Page** 
 &nbsp;
-![Careers Page](/portfolio/assets/img/aapl_stock_news/aapl-careers.png)  
+![Careers Page](/portfolio/assets/img/aapl_stock_news/aapl_careers.png)  
 
 
 [elementor]: https://elementor.com/
