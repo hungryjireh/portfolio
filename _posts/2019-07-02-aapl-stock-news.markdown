@@ -12,7 +12,7 @@ Elementor is predominantly a drag-and-drop site builder, with a focus on design 
 
 Since the main purpose of the website is to direct customers to purchase the packages that they offer, I had to ensure that users were sufficiently interested in what they were looking at to continue browsing the site, as well as to ultimately be directed to the "Pricing" page.
 
-The website is currently live at ![https://apple-stock-news.com][apple-stock-news] The main pages of the website can be found below.  
+The website is currently live at [https://apple-stock-news.com][apple-stock-news] The main pages of the website can be found below.  
 
 ---
 &nbsp;
