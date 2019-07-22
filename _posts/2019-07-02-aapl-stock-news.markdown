@@ -1,7 +1,7 @@
 ---
 layout: post_update
 title:  "Apple Stock News Website Redesign"
-date:   2019-07-02 21:34:40 +0300
+date:   2019-07-22 12:34:40 +0300
 categories: portfolio
 author: Jireh
 ---
@@ -12,7 +12,7 @@ Elementor is predominantly a drag-and-drop site builder, with a focus on design 
 
 Since the main purpose of the website is to direct customers to purchase the packages that they offer, I had to ensure that users were sufficiently interested in what they were looking at to continue browsing the site, as well as to ultimately be directed to the "Pricing" page.
 
-The main pages of the website can be found below.  
+The website is currently live at ![https://apple-stock-news.com][apple-stock-news] The main pages of the website can be found below.  
 
 ---
 &nbsp;
@@ -37,14 +37,30 @@ The main pages of the website can be found below.
 ![News Page](/portfolio/assets/img/aapl_stock_news/aapl-news.png)  
 
 {:start="5"}
-**5. Pricing Page** 
+**5. Forecasts Page** 
+&nbsp;
+![Forecasts Page](/portfolio/assets/img/aapl_stock_news/aapl-forecasts.png)  
+
+{:start="6"}
+**6. Articles Page** 
+&nbsp;
+![Articles Page](/portfolio/assets/img/aapl_stock_news/aapl-articles.png)  
+
+{:start="7"}
+**7. Pricing Page** 
 &nbsp;
 ![Pricing Page](/portfolio/assets/img/aapl_stock_news/aapl-pricing.png)  
 
-{:start="6"}
-**6. FAQ Page** 
+{:start="8"}
+**8. FAQ Page** 
 &nbsp;
 ![FAQ Page](/portfolio/assets/img/aapl_stock_news/aapl-faq.png)  
 
+{:start="9"}
+**9. Careers Page** 
+&nbsp;
+![Careers Page](/portfolio/assets/img/aapl_stock_news/aapl-careers.png)  
+
 
 [elementor]: https://elementor.com/
+[apple-stock-news]: https://apple-stock-news.com
