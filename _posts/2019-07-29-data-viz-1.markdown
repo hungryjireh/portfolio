@@ -1,0 +1,228 @@
+---
+layout: post_update
+title:  "Data Visualisation and Analysis of Singapore’s Largest Online Christian Publications: Part 1"
+date:   2019-07-29 14:34:30 +0300
+categories: portfolio
+img_title: data_viz_thumbnail_1.png
+author: Jireh
+---
+
+I became interested in web scraping awhile ago. For those who are unfamiliar with this term, web scraping essentially refers to obtaining information of interest from websites that might be more easily used for other purposes —such as data analysis, trading or perhaps just creating a new repository of knowledge for yourself. Honestly, this interest could possibly stem from my very Singaporean nature of wanting to get as many things for free, but of late, it has proven to be a rather useful skill.
+
+Though Singapore is a small nation, perhaps because of the blessing of religious freedom, Christianity has flourished here (almost 20% as seen from this [Wikipedia article][wikipedia]). We have numerous mega-churches — New Creation Church helmed by Pastor Joseph Prince has a [weekly Sunday attendance of 33,000 people][ncc], whereas the church that I personally attend has a weekly attendance of about 2500 — an attendance which a Swiss couple I met in Israel mentioned would be a “mega, mega church” in Switzerland. We see evidence of Christianity thriving in Singapore from the popularity of local online Christian publications as well. From [Thir.st Magazine][thirst-instagram] to [SELAH][selah-instagram], both of which have a combined following of approximately 14,000 on Instagram alone, these publications have thrived over the past few years, and are frequently mentioned in conversations and discussions among Christians.
+
+Armed with my new web-scraping toy and with a bit more knowledge on data analysis from a university module on the [Digital Humanities][sutd-dh], I wondered— **what insights on Christianity in Singapore would we be able to get if we were to study content produced by the largest local publications**? Naturally, one’s writings will be influenced by a myriad of factors, including one’s theological leanings, cultural influences and so on. Would we be able to uncover any trends and generalise certain findings across the Singaporean Christian population through popular Christian publications? Since most of these publications have been around for a few years now, there would probably be quite a bit of data available for me to conduct basic data analysis on these publications individually, and as a whole.
+
+---  
+&nbsp; 
+
+With this hypothesis, I began scraping basic metadata (titles, descriptions, authors, dates published, categories and links) from Singaporean Christian publications using the Python [BeautifulSoup][beautifulsoup] library. My focus was on four publications:
+
+**[SELAH][selah-main]**
+
+SELAH was established in 2014 by a group of friends who craved local faith narratives that differed from perspectives that typically hailed from the West. Unlike other publications, SELAH creates content with Singaporean Christians in mind.
+
+**[Thir.st][thirst-main]**
+
+Launched in 2016, Thir.st is arguably the largest Christian publication site that is based in Singapore. While it covers large Christian events like the Celebration of Hope, Thir.st’s content seems to largely comprise testimonies and/or personal anecdotes with regards to Christian beliefs and practices.
+
+**[Salt & Light][saltlight-main]**
+
+The youngest publication, Salt & Light’s content caters towards the working population, inspiring and encouraging fellow Christians “to be overcoming, influential Christians at the marketplace.”
+
+**[YMI][ymi-main]**
+
+YMI seems to be the oldest kid on the block among the different Singapore-based online Christian publications. Part of the Our Daily Bread Ministries, YMI hopes to get people talking about their purpose (as perhaps indicative of its name — “Why am I?”).
+
+---
+&nbsp; 
+
+The first thing that surprised me was the sheer amount of content that has been published. **Over the past 10 years, 3,644 articles were published in total.** Below is a comparison between the total number of articles posted by each publication.
+
+![Pie Chart](/portfolio/assets/img/data_viz_christian/piechart.png)  
+*Proportion of all articles produced by each Singapore-based online Christian publication*
+&nbsp; 
+
+![Breakdown](/portfolio/assets/img/data_viz_christian/screenshot1.png)  
+*Total Number of Unique Articles of All Singapore-based Online Christian Publications*
+&nbsp; 
+
+While the specific time frame that I am looking at is from 10 February 2009 (the day the very [first article][ymi-first] was published by YMI) to 27 June 2019, as one can observe from the bar chart below, **it seems like most publications were only produced in the past two years or so.**
+
+![dates-graph](/portfolio/assets/img/data_viz_christian/frequency_publications_barchart.png)  
+*Bar Chart Graph of Number of Articles Produced from 10 February 2009 to 27 June 2019.*
+&nbsp; 
+
+![dates-curve-graph](/portfolio/assets/img/data_viz_christian/frequency_publications.png)  
+*Cumulative Distribution Frequency Graph of Christian Online Publications*
+&nbsp; 
+
+From the cumulative distribution graph above, we can hypothesise that Singapore online Christian publications had two growth spurts: one from early 2013 to late 2016, and one from late 2016, and which is persisting till today. As seen from the output below:
+
+```
+# YMI  
+2016 Date Range: January 01, 2016 to December 30, 2016  
+* Number of articles posted in 2016: 206
+* Percentage of articles posted in 2016:  16.71%
+* Average number of articles per day in 2016(date range):  0.57  
+2015 Date Range: January 05, 2015 to December 30, 2015
+* Number of articles posted in 2015: 212
+* Percentage of articles posted in 2015:  17.19%
+* Average number of articles per day in 2015(date range):  0.59  
+2014 Date Range: January 01, 2014 to December 31, 2014
+* Number of articles posted in 2014: 137
+* Percentage of articles posted in 2014:  11.11%
+* Average number of articles per day in 2014(date range):  0.38  
+2013 Date Range: January 02, 2013 to December 27, 2013
+* Number of articles posted in 2013: 140
+* Percentage of articles posted in 2013:  11.35%
+* Average number of articles per day in 2013(date range):  0.39
+```
+
+Given that YMI produced about 695 articles from 2013 to 2016, and that there were a total of 889 articles produced from 2013 to 2016, YMI accounted for approximately 78.2% of all publications. **If quantity is the yardstick of success in online Christian publications, it seems like YMI was indeed the pioneer of online Christian publications in Singapore in the early years.**
+
+However, later on, we can observe an even sharper rate of increase in online publications production some time after late 2016 — the second, and perhaps greater growth spurt in online Christian publication growth.
+
+```
+# Thir.st
+2019 Date Range: January 02, 2019 to June 26, 2019
+* Percentage of articles posted in 2019:  18.35%
+* Average number of articles per day in 2019(date range):  1.63
+* Average number of articles per day in 2019(1 January 2019 to June 26, 2019: 1.62
+2018 Date Range: January 03, 2018 to December 31, 2018
+* Percentage of articles posted in 2018:  38.36%
+* Average number of articles per day in 2018(date range):  1.65
+* Average number of articles per day in 2018(1 January 2018 to December 31, 2018: 1.64
+2017 Date Range: January 03, 2017 to December 29, 2017
+* Percentage of articles posted in 2017:  39.19%
+* Average number of articles per day in 2017(date range):  1.7
+* Average number of articles per day in 2017(1 January 2017 to December 29, 2017: 1.69
+2016 Date Range: August 21, 2016 to December 31, 2016
+* Percentage of articles posted in 2016:  4.11%
+* Average number of articles per day in 2016(date range):  0.48
+
+# Salt & Light  
+2019 Date Range: January 01, 2019 to June 04, 2019
+* Percentage of articles posted in 2019:  29.06%
+* Average number of articles per day in 2019(1 January 2019 to June 04, 2019): 1.21  
+2018 Date Range: January 07, 2018 to December 31, 2018
+* Percentage of articles posted in 2018:  70.94%
+* Average number of articles per day in 2018(date range):  1.27
+* Average number of articles per day in 2018(1 January 2018 to December 31, 2018: 1.25
+
+# SELAH  
+2019 Date Range: March 07, 2019 to June 01, 2019
+* Number of articles posted in 2019: 4
+* Percentage of articles posted in 2019:  1.88%
+* Average number of articles per day in 2019(date range):  0.05  
+2018 Date Range: January 14, 2018 to December 01, 2018
+* Number of articles posted in 2018: 35
+* Percentage of articles posted in 2018:  16.43%
+* Average number of articles per day in 2018(date range):  0.11  
+2017 Date Range: January 01, 2017 to December 03, 2017
+* Number of articles posted in 2017: 44
+* Percentage of articles posted in 2017:  20.66%
+* Average number of articles per day in 2017(date range):  0.13  
+2016 Date Range: January 01, 2016 to November 26, 2016
+* Number of articles posted in 2016: 47
+* Percentage of articles posted in 2016:  22.07%
+* Average number of articles per day in 2016(date range):  0.14  
+2015 Date Range: January 03, 2015 to December 22, 2015
+* Number of articles posted in 2015: 37
+* Percentage of articles posted in 2015:  17.37%
+* Average number of articles per day in 2015(date range):  0.1  
+2014 Date Range: February 15, 2014 to December 25, 2014
+* Number of articles posted in 2014: 46
+* Percentage of articles posted in 2014:  21.6%
+* Average number of articles per day in 2014(date range):  0.15
+```
+
+When we take a closer look — in the past two years or so — we’ll see that out of 3,644 articles which were published over a 10 year time frame, 2,696 of them were published from 1 January 2017 to 27 June 2019. That’s 74.0% of all articles! The most number of articles ever published in a day was on 7 January 2018, where 18 articles were published. I find it hard to wrap my head around the idea of having 18 articles to publish on one day — content is really hard to create — but so it goes. All of the articles that were released on this particular date was published by Salt and Light (speculation: this could have been the day they began operations).
+
+![dates-recent-graph](/portfolio/assets/img/data_viz_christian/frequency_publications_barchart_recent.png)  
+*Bar Chart Graph of Number of Articles Produced from 1 January 2017 to 27 June 2019.*
+&nbsp; 
+
+Remarkably, the average number of articles published a day in this period is 2.97 articles. Essentially, this means that **you can expect to have access to 3 more Christian-related articles on a daily basis** — and this is just in Singapore alone.
+
+Granted, all four publications accept submissions and do not necessarily write everything in-house, but the rate of production of Christian publications to me is still unprecedented. Those who follow Thir.st on any social media platform would undoubtedly be aware of the amount of content that they produce — considering that Thir.st entered the scene around this time (the first Thir.st article was published on [21 August 2016][thirst-first]), it seems like the entrance of Thir.st marked the increase in availability of local online Christian publications in Singapore. As observed from the series of bar charts below, the sheer amount of content produced by Thir.st (and later Salt & Light) seems to be significantly more than any other Christian publications.
+
+![thirst-number-articles](/portfolio/assets/img/data_viz_christian/thirst_dates.png)  
+*Most number of articles produced by Thir.st, ranked by day of publication.*
+
+![saltlight-number-articles](/portfolio/assets/img/data_viz_christian/saltandlight_dates.png)
+
+*Most number of articles produced by Salt & Light, ranked by day of publication.*
+
+![selah-number-articles](/portfolio/assets/img/data_viz_christian/selah_dates.png)  
+*Most number of articles produced by SELAH, ranked by day of publication.*  
+
+![ymi-number-articles](/portfolio/assets/img/data_viz_christian/ymi_dates.png)  
+*Most number of articles produced by YMI, ranked by day of publication.*  
+
+Considering that Salt & Light was only established in 2018, the fact that it has already produced 640 unique articles in less than two years is pretty impressive. However, the older sibling Thir.st still seems to be the most active in producing content, where on average, 2.56 articles are published on a daily basis, and the median number of articles published a day is 2.
+
+![mean-median](/portfolio/assets/img/data_viz_christian/screenshot2.png)  
+*Median and Mean number of articles published by each Singapore-based Christian Online Publication*  
+
+---  
+&nbsp; 
+
+A breakdown of the number of articles in each category for each publication can be found below. The numbers here are larger due to the fact that articles may be assigned multiple categories.
+
+![saltlight-categories](/portfolio/assets/img/data_viz_christian/saltandlight_categories.png)  
+*Salt & Light: Number of articles in each category*
+
+![selah-categories](/portfolio/assets/img/data_viz_christian/selah_categories.png)  
+*SELAH: Number of articles in each category*
+
+![thirst-categories](/portfolio/assets/img/data_viz_christian/thirst_categories.png)  
+*Thir.st: Number of articles in each category*
+
+![ymi-categories](/portfolio/assets/img/data_viz_christian/ymi_categories.png)  
+*YMI: Number of articles in each category*
+
+Since all of these online Christian publications take in submissions, perhaps we can theorise that certain categories will inevitably be more popular than others. While we may not know which are the most popular topics among readers, it seems like practical topics — **[faith][faith-link]**, **[Christian-living][christian-living-link]** and **[life issues][life-issues-link]** — are the preferred topic of publishers and contributors.
+
+---
+&nbsp; 
+
+Certainly some contributors will be more active than others as well. Here, we can observe who are the top contributors for each individual Christian publication.
+
+![saltlight-authors](/portfolio/assets/img/data_viz_christian/saltandlight_authors.png)
+*Salt & Light: Number of articles published by each author*
+
+![selah-authors](/portfolio/assets/img/data_viz_christian/selah_authors.png)
+*SELAH: Number of articles published by each author*
+
+![thirst-authors](/portfolio/assets/img/data_viz_christian/thirst_authors.png)
+*Thir.st: Number of articles published by each author*
+
+![ymi-authors](/portfolio/assets/img/data_viz_christian/ymi_authors.png)
+*YMI: Number of articles published by each author*  
+&nbsp; 
+
+From this set of graphs, we’d probably be able to tell who the full-time staff are, or at least identify the core team behind each Christian publication. **Out of the four publications, it seems like SELAH is the most selective with the authors they choose to publish**, with 69.04% (147 out of 213) of articles being written by 4 writers.
+
+---
+&nbsp; 
+
+Part 2 can be found here: [https://medium.com/@jirehtan/data-visualisation-and-analysis-of-singapores-largest-online-christian-publications-part-2-7a5cc223f838][medium-link]. If you enjoyed this, do send me your ideas on anything else you might want to read about, as well as any feedback that you might have. :)
+
+[wikipedia]: https://en.wikipedia.org/wiki/Religion_in_Singapore?source=post_page---------------------------#Christianity
+[ncc]: https://www.newcreation.org.sg/about-us/?source=post_page---------------------------#who-we-are
+[thirst-instagram]: https://www.instagram.com/thir.st/?source=post_page---------------------------
+[selah-instagram]: https://www.instagram.com/selahsg/?source=post_page---------------------------
+[sutd-dh]: https://hass.sutd.edu.sg/education/undergraduate-subjects/elective/02-137-introduction-digital-humanities?source=post_page---------------------------
+[beautifulsoup]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/?source=post_page---------------------------
+[selah-main]: https://www.selah.sg/?source=post_page---------------------------
+[thirst-main]: https://thir.st/?source=post_page---------------------------
+[saltlight-main]: https://saltandlight.sg/?source=post_page---------------------------
+[ymi-main]: https://ymi.today/?source=post_page---------------------------
+[ymi-first]: https://ymi.today/2009/02/bursting-forth-in-glorious-day/?source=post_page---------------------------
+[thirst-first]: https://thir.st/blog/its-not-about-how-much-money-we-make-its-about-how-many-lives-we-impact/?source=post_page---------------------------
+[faith-link]: https://thir.st/faith/?source=post_page---------------------------
+[christian-living-link]: https://www.selah.sg/category/christian-living/?source=post_page---------------------------
+[life-issues-link]: https://ymi.today/topics/life-issues/?source=post_page---------------------------
+[medium-link]: https://medium.com/@jirehtan/data-visualisation-and-analysis-of-singapores-largest-online-christian-publications-part-2-7a5cc223f838
+

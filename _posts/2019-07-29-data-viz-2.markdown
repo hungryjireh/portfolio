@@ -1,0 +1,241 @@
+---
+layout: post_update
+title:  "Data Visualisation and Analysis of Singapore’s Largest Online Christian Publications: Part 2"
+date:   2019-07-29 16:10:30 +0300
+categories: portfolio
+img_title: data_viz_thumbnail_2.png
+author: Jireh
+---
+
+In [part 1][part-1], we spent most of the article looking at a broad perspective of online Singapore-based Christian publications. We made a range of observations, including hypotheses about how there were two main growth spurts in the growth of online Christian publications, as well as identifying the more popular categories among these publications.
+
+In this article, we will instead be looking at the choices of words used in the titles and descriptions of articles by the different online Christian publications.
+
+---
+&nbsp;
+
+Word choices in titles and descriptions are important because they essentially determine whether potential readers will interact with the article. Akin to a door, at first glance, readers will be able to determine almost immediately if the topic is of interest to them, and whether they will spend a portion of their time reading or skimming through the article in question.
+
+Word choices also reflect characteristics of a publication. For instance, the use of Singlish in a title or description will be more likely to interest a Singaporean than an American, hence indicating who the target audience for that particular piece is. Likewise, if certain landmarks and events are mentioned, this will be more familiar to people residing in that country, as opposed to other people who may not even have visited the aforementioned country before.
+
+Thus, the word choices of Singapore-based online Christian publications may be able to offer us insights into the theological leanings of Christians, as well as a myriad of other potential observations such as the general interests of their readers — assuming of course, that publications adopt a data-driven decision approach, where the more views on a certain topic leads them to produce more articles on these topics.
+
+---
+&nbsp;
+
+In semantic analysis, part of pre-processing one’s data set is the identification of stop words. Stop words are words that are deliberately not taken into consideration during data analysis, typically because these words usually serve semantic purposes, rather than being associated with meaning in themselves. Some of these words include verbs like “are”, “were”, “is”, prepositions like “in”, “on” and “at” and pronouns like “you”, “me” and “we”.
+
+The removal of stop words typically improves one’s analysis. For example, most of the articles in the [Salt & Light “Ask” category][salt-light-ask] have titles that begin with “Ask Salt & Light”. The removal of this phrase would probably not have a noticeable impact on the meaning of the title, since this phrase in itself is only indicative that the article is a part of a series and does not have any other meaning in itself. However, it could significantly affect a word cloud’s intended output, and hence it might be a better decision to remove such words instead.
+
+While there are lists of stop words that are readily available online — for instance, the NLTK(Natural Language Toolkit) in Python provides stopwords in 16 different languages — one would typically be able to obtain different sets of results with different stop words as well. In my case, I used two different lists of stop words.
+
+The full list of stopwords that I personally used is as follows. This is taken from part of the [NLTK’s list of English stopwords][nltk-link]:
+
+```
+stopwords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself', 'they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not',
+'only','own','same','so','than','too','very','s','t','can','will','just','don','should','now','uses','use','using','used','one','also', 've', 'm', 're']
+```
+
+However, I was also interested in analysing the titles and descriptions with a more restrictive list of stop words. This to me, meant retaining pronouns like “you” and “I”, and solely removing linkage words like “be”, “are” and the like, which mean nothing inherently.
+
+The second list of stop words is as follows:  
+
+```
+stopwords = ['does', 'did', 'in', 'is', 'was', 'a', 'the', 'of', 'are', 'for', 'an', 'have', 'so', 'this', 'to', 'and', 'as', 'that', 'had', 'at', 'on', 'be']
+```  
+
+Here’s the output wordcloud if we were to eliminate the full list of stop words from all titles and descriptions.  
+
+![titles-full-stopwords](/portfolio/assets/img/data_viz_christian/compiled_wordcloud_title_full_stopwords.png)  
+*Wordcloud of all titles from Thir.st, Salt & Light, SELAH and YMI (full list of stop words)*
+
+![desc-full-stopwords](/portfolio/assets/img/data_viz_christian/compiled_wordcloud_desc_full_stopwords.png)  
+*Wordcloud of all descriptions from Thir.st, Salt & Light, SELAH and YMI (full list of stop words)*  
+
+The first thing that catches my notice is the frequency of “3” and “5”. I personally find this rather amusing, because it brings to mind Thought Catalog-esque titles like “3 things to look for in a girl”, and “5 things to do this weekend”. Can we assume that Singapore-based online Christian publications are prone to using click-bait titles as well?
+
+The answer is… maybe. We found 127 articles of the format “n [action] to [verb] [optional: season]”. This comprises 3.49% of articles, which fortunately or unfortunately, is definitely not significant enough to make any conclusive remarks.
+
+```
+Full list of articles containing "3" or "5" can be found here: [https://hackmd.io/@hungryjireh/christianpub_numbers][numbers-hackmd]
+* 3 Ways to Reconcile Our Differences
+* 3 Things We Miss in our resolution-making
+* Bad day at work? 5 things to keep in mind
+* Our Top 5 videos of 2018
+* The 5 most meaningful Christmas ads of all time
+* 5 amazing Bible stories where less is more
+* 5 steps to impact your neighbourhood
+* 5 Ways to Do More of What You're Made to Do - Worship!
+```  
+
+Additionally, an emphasis on the three Christian values of “faith”, “hope” and “love” is rather evident from the wordcloud constructed from titles of articles (see the left hand side of the image). This brings to mind the verse from 1 Corinthians 13:13, and perhaps appropriately, the “greatest of these” — even from the wordcloud — is also love.
+
+Perhaps another thing we can draw from this wordcloud is the centrality of “God” — most notably, perhaps because it is the most mentioned word among the different titles and descriptions (appears in 219 titles, or 6.01% of articles, and in 217 descriptions, or 5.95% of articles). Besides this, something interesting from the various titles that mention “God” is the limited range of topics within this category subset. It seems like most articles can be classified under two distinct sub-groups: testimonies and stories of different individuals’ personal relationship with God (such as what God has done for them), and discussions on theological topics — including but not limited to the presence of God in suffering. Though these topics are broad in themselves, I find it fascinating how the articles may seem like they are regarding God on the surface, but they are perhaps mostly about us. And it isn’t necessarily a bad thing! It seems like many articles are an exposition on what someone has experienced in life and has learnt about God (and themselves) through that period of time. I find this characteristic of understanding God individually — and not just corporately — to be mostly unique to Christianity.  
+
+```
+Full list of articles containing "God" can be found here: [https://hackmd.io/@hungryjireh/christianpub_god][god-hackmd]
+# Sample of titles containing "God"* Is God Among Children of War?
+* Why Doesn’t God Rescue Us?
+* Help! God is Pursuing Me!
+* Through the Lens of God
+* “The glory of God is at stake,” declares Bishop Rennis Ponniah at PraySingapore
+* Migrant workers are finding God in a foreign land
+* “The devil came to kill, steal and destroy but God restored my life”: Actor Li Nanxing
+* Celebration of Hope 30.Day Prayer – Day 1: We thank God
+* “The miracle we wanted was her healing, but the miracle God gave was changing people’s lives”
+* When God asked me: “Do you want to live or die?”
+* Does God get mad at me when I doubt?
+* Lost her father at 21, widowed at 37, yet F&B CEO Jocelyn Chng says God never left her
+* “We didn’t have a business plan because it was a God thing!” The story behind Armour Publishing
+* How hard is it to follow God all the way?
+* “If God doesn’t heal, then what?” A question Pastor Philip Lyn grappled with
+* In awe of God and autism: A new book offers help
+* Broadcast veteran Bernard Lim’s return to God after a devastating stroke
+* Kallos: A 13-year-old girl’s dream that God turned into reality# Sample of descriptions containing "God"* How God drew me out of depression
+* How God drew me out from the pit
+* But God wanted my heart before my hands
+* How God found me when I was ready to leave the Church
+* How I stopped pleading God for forgiveness
+* What has God in store for 2018?
+* The journey of discovering how God made families to function as “us”, not “I”.
+* Who has God in store for you?
+* “In the same way, I tell you, there is rejoicing in the presence of the angels of God over one sinner who repents.” (Luke 15:10)...
+* “When God is about to do a mighty work, He gathers His people in consecrated repentance,” said Reverend Edmund Chan at PraySingapore on October 7, 2018....
+* Wise as King Solomon was, he missed the call of God in his life – totally....
+* God has His heart for Singapore. And God has His desire and His work....
+* Nothing is greater than the extraordinary call of God to us. We have been called to live a holy life: “You shall be holy, for I am holy.” (1 Peter 1:16)...
+```  
+
+Initially, I thought that this might be more evident by looking at titles that contained the word “life”, which is the next-most mentioned as observed from the wordcloud (119 titles, or 3.27% of articles and 174 descriptions, or 4.77% of articles). I felt that this set of titles were a lot less straightforward. Besides personal testimonies, there were also articles on self-improvement from a Christian perspective, as well as articles written to encourage, inspire and challenge. While these themes are not necessarily mutually exclusive, it seems like this theme is just as broad as the notion of life itself.
+
+In the descriptions however, this broadness converges slightly. While we see certain articles which may nudge us towards personal reflection and action (eg. “Recently, a young pastor of an emerging church tragically took his life after battling depression and anxiety….”), we may notice that most excerpts contain a recount of experiences in the life of the writer, and how God has perhaps either delivered them from a certain situation, or fulfilled His promises to them. Personally, I see it again as a reflection of one of the core teachings in Christianity on the personal relationship of an individual with God.  
+
+```
+Full list of articles containing "life" can be found here: [https://hackmd.io/@hungryjireh/christianpub_life][life-hackmd]
+# Sample of titles containing "Life"* Finding the best life
+* “There’s no fear of death, my life is in God’s hands”: The Hiding Place’s Pastor Philip Chan as he battles liver cancer
+* Life is a struggle for inmates’ families: Can we do more?
+* When God phoned: Pacific Healthcare’s GM on the calls that changed his life
+* Home in: Our teens and their life of faith
+* The half-time that could change your life
+* 21project in Hawaii: This summer could change your life
+* What it takes to live a life of influence
+* Out of the ashes, a life restored: Adia Tay on finding comfort and shelter...
+* How to KonMari your spiritual life in 2019
+* God has a promise for your life
+* “Will your life be a reference point for the next generation?”: Jaso...
+* They said my unborn baby is incompatible with life
+* If you died today, what would your life amount to?
+* Do you love life enough to save it?# Sample of descriptions containing "Life"* “I felt like I was in limbo, between life and death.”...
+* If you’re between the ages 18 and 35, that’s a wonderful stage in life to be at!...
+* As a full-time career consultant, I come across people from all walks of life each day....
+* It’s really startling to me that after 13 years, I’m finally at the tail end of my life as a student. ...
+* In the past, my whole life was filled with insecurities and inadequacies....
+* Recently, a young pastor of an emerging church tragically took his life after battling depression and anxiety....
+* Is your life full of pain and suffering?...
+* Is there more to life than this?...
+* I’m at a time in my life where I’m figuring out for myself what it means to be a woman — and one who is after God’s heart. Topics like being a girlfriend and eventually becoming a...
+* Each year on 25th December, I spend some time reflecting on what my life has amounted to so far – because it’s my birthday (too)....
+* If you’ve been following the news, you may have seen the video or heard the story of the ban mian seller who turned her life around....
+* “God had a dream for your life before you were even born, and then He wrapped a body around that dream to fulfil that dream.”...
+Jennifer Heng has held various leadership positions in church, from youth pastor to Senior Pastor. She was also the volunteer Director of Dayspring New Life Centre, which aims to empower women and f...
+* “I now see that I spent most of my life in doing neither what I ought nor what I liked.” (C S Lewis, The Screwtape Letters)...
+```  
+
+One of my personal favourites though, is the range of titles and descriptions that contain “church”. While this only comprises 86 article titles (2.36% of titles) and 175 article descriptions (4.80% of articles), I personally found these articles to be such an accurate reflection of the tensions and complexities of the relationship between an individual and the church he or she attends, as well as the Church, which is also known as the larger body of Christians locally or even internationally. From the sample below, we can observe recurring themes such as toying with the idea of leaving church / observations of others who have left church, which is essentially a matter of belonging and identity to the church, struggles in church (including but not limited to transparency, personal beliefs and serving), as well as the church’s relationship with society.
+
+I find this to be incredibly reflective of my personal experience with Christianity, because despite general associations of the church with God (and other members of the Trinity), I find myself to have separate impressions of my relationship with God and my relationship with the Church. And this is perhaps reflected in the differences between the set of titles containing “Church” and the set of titles containing “God” — while the latter seems to be populated with testimonies of gratitude, the former seems to contain stories of personal struggles and difficulties with and within the institution.
+
+```
+Full list of articles containing "church" can be found here: [https://hackmd.io/@hungryjireh/christianpub_church][church-hackmd]
+# Sample of titles containing "Church"* Is the Church ready to talk about sex?
+* My heart broke when my mentees left church
+* Creatives, this is how to serve in church and not burn out
+* Gateway to the nations: Is the Singaporean Church mission-minded?
+* What does 2019 hold for the Church in Singapore?
+* Experiencing church in a new city
+* PraySingapore: The day the church filled the National Stadium with prayer...
+* A young church leader’s journey through sexuality and lust
+* The mask he wore to church
+* The art of serving millennials in a Chinese church
+* The art to straddling church and culture
+* “What if the poor are billionaires?”: Heidi Baker asks the Church to feed al...
+* There’s no young people in my church … Should I leave?# Sample of descriptions containing "Church"* A couple years ago, a colleague of mine invited my friend and I to visit an African church. l settled in my seat at the beginning of the service, expecting a heartfelt but rather demure time of praise and worship, just like - the kind of church services I grew up with in Australia.
+* I looked around at the unfamiliar faces in the congregation, and then back to the front of the church, where the pastor had been preaching for 25 minutes already. I had grown up in a church where a sermon was called a homily, and it was 15 minutes at most.
+* At the moment, I find forming friendships in church quite challenging. Moving to a new city, as well as health issues, is probably part of the reason. I also have trouble connecting deeply with people at church, even though I join small groups, volunteer for service, and participate in church events.
+* The church I became a Christian in is probably one of the smallest churches in Singapore. I started attending it because the pastor's wife - who happens to be my husband's aunt - reached out to me during a period of trials. Through her, I found comfort in God's Word and a Christian community who really encouraged me.
+* At one point in time, I was serving in seven ministries and had five church meetings over a single weekend. I'm not trying to tell you how holy I was. In fact, I'm telling you how foolish I was.
+* Is it okay to pray for a miracle healing? Can we speak in tongues? Can a woman preach at the pulpit? Should the church support anti-homosexual laws? What's the church's stand on abortion? What should we do with an errant pastor? Is there a "correct" version of the Bible? Can we play the drums in worship? Should Christians drink alcohol?
+* Since giving my life to Christ nine years ago, l have been on a spiritual odyssey to find a suitable church for my family. I have been happy in some places of worship l visited, and misunderstood in others.
+```  
+
+---
+&nbsp;
+
+![titles-partial-stopwords](/portfolio/assets/img/data_viz_christian/compiled_wordcloud_title_partial_stopwords.png)  
+*Wordcloud of all titles from Thir.st, Salt & Light, SELAH and YMI (partial list of stop words)*  
+
+![descriptions-partial-stopwords](/portfolio/assets/img/data_viz_christian/compiled_wordcloud_desc_partial_stopwords.png)  
+*Wordcloud of all descriptions from Thir.st, Salt & Light, SELAH and YMI (partial list of stop words)*  
+
+As a parting remark, while constructing the word cloud for the four online publications using the partial list of stop words, I was surprised by the frequency of pronouns used in both titles and descriptions. 857 articles contained the word “my” or “i” — this makes up 23.5% of all articles.
+
+This could be attributed to numerous reasons. One reason could be copywriting. Certain headlines, for example, are known to seem more interesting to readers, and will hence be more likely to have higher page views as opposed to other seemingly “boring” titles. Another reason could be a result of branding. For instance, the fact that someone could build a [Rice Media title generator][rice-media-generator] with titles that sound almost exactly like something the company would write is due to Rice Media’s strong branding, and this includes components such as their voice, and their style of writing.  
+
+My personal speculation, however, is something that I have long speculated. This hinges on psychological biases, and may not necessarily be true, but I personally think that Christianity is considerably one of the most individualistic religions. In church, we hear “Christ died for our sins” as much as we hear “Christ died for **your** sins”. We hear things frequently like “God wants to have a **relationship** with **you”**, which emphasises a one-to-one relationship over a one-to-many relationship. When a Christian is seeking direction in life, you might hear him or her saying that “God has a plan for **me**“, and that he or she is “praying about where God wants me to go next”. We may hear others telling us to “experience Christ”, which hints at a very personal understanding of Him. Each Christian’s uniqueness is emphasised and encouraged in Paul’s letter to the Corinthians Church, where each one is assured of playing different roles in the body.  
+
+Is it strange that we see such a significant number of pronouns in the titles and descriptions of the articles? Maybe, maybe not. As a means of comparison, I scraped all of Rice Media’s titles, though it seems like out of 1321 articles, only 8.62% of them, or 114 of them, contain the words “my” and/or “i”. This figure is quite significant, and it thus seems like the usage of such pronouns is indeed a matter of copywriting to some extent — though perhaps the usage of these pronouns is more characteristic of an online Christian publication rather than Rice Media. Still, I think it might be worth thinking about other interesting examples of individualistic traits that might be more characteristic of Christianity, and what it might mean or imply for a believer and a body of believers.  
+
+```
+Full list of articles containing "me" or "i" can be found here: [https://hackmd.io/@hungryjireh/christianpub_me][me-hackmd]
+# Sample of titles from online Christian Publications containing "me" or "i"* Could I have everything I wanted and yet not be satisfied?
+* I spoke to people on their stories of hope, and this is what I discovered...
+* Making peace with my Tiger Mum
+* Full-time under 30: Becoming who I was made to be
+* So I finally heard John Mayer sing live
+* Where have all my dreams gone?
+* As a young person, how can I make a difference in my culture?
+* 6 lessons I learnt as a career consultant
+* “I promised God I would stop”: My struggle with sexual addiction...
+* My season as a student is ending. What have I done?
+* I didn’t dare to let myself feel beautiful
+* Unwed, pregnant and headed for Harvard – I thought the choice was clear...
+* Lent is here, should I care?# Sample of titles from Rice Media containing "me" or "i"* As Singapore’s Iconic Buildings Disappear, So Did the Playground of My Childhood
+* For a Week, I Let Other People Dictate All My Meals
+* I Went to South Korea to Become A K-Pop Idol Backup Dancer
+* A Letter to My First Love, Fried Chicken
+* A Letter To My Younger Stupid Self From The Year 2058
+* My Parents Used to Save Coins in a Glass Bottle. It Taught Me Everything About Life
+* I Became An Online Troll, and It Was Kind Of Incredible
+* Please Stop Making Me Talk About My Mental Health, TYVM
+* I Handle Public Relations for SMRT and I Hate Myself
+* I Really Wanted to Hate Tanglin, But I Couldn’t
+* I Learnt How to Hack a Bank Account from Carousell
+* I Hate Influencers Because I Hate Myself
+* Will Paying Rent Buy Me My Independence?
+```  
+
+![ricemedia-full-stopwords](/portfolio/assets/img/data_viz_christian/ricemedia_wordcloud_title_full_stopwords.png)  
+*Wordcloud of all titles from Rice Media (full list of stop words)*  
+
+![ricemedia-partial-stopwords](/portfolio/assets/img/data_viz_christian/ricemedia_wordcloud_title_partial_stopwords.png)  
+Wordcloud of all titles from Rice Media (partial list of stop words)  
+
+---
+&nbsp;
+
+There are probably a ton of other observations which can be made from these wordclouds — I’d love to hear about them, if this activity interests you as well. A list of different articles used to create these wordclouds can be found [here][hackmd], should you wish to take a look and conduct your own analysis.
+
+In the next post, I’d be analysing the wordclouds of the titles and descriptions of each of the four Singapore-based online publications individually!
+
+
+[part-1]: https://medium.com/@jirehtan/data-visualisation-and-analysis-of-singapores-largest-online-christian-publications-part-1-8ffbf8c96b93?source=post_page---------------------------
+[salt-light-ask]: https://saltandlight.sg/ask/?source=post_page---------------------------
+[nltk-link]: https://gist.github.com/sebleier/554280?source=post_page---------------------------
+[numbers-hackmd]: https://hackmd.io/@hungryjireh/christianpub_numbers?source=post_page---------------------------
+[god-hackmd]: https://hackmd.io/@hungryjireh/christianpub_god?source=post_page---------------------------
+[life-hackmd]: https://hackmd.io/@hungryjireh/christianpub_life?source=post_page---------------------------
+[church-hackmd]: https://hackmd.io/@hungryjireh/christianpub_church?source=post_page---------------------------
+[rice-media-generator]: https://thekopi.co/2019/06/09/rice-headline-generator/?source=post_page---------------------------
+[me-hackmd]: https://hackmd.io/@hungryjireh/christianpub_me?source=post_page---------------------------
+[hackmd]: https://hackmd.io/@hungryjireh/christianpub?source=post_page---------------------------
