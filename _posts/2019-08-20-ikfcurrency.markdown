@@ -81,6 +81,7 @@ The different pages which I had designed using [Elementor][elementor] can be fou
 ![Blog Post Page](/portfolio/assets/img/ikfcurrency/ikfcurrency_blogpost.png) 
 
 [apple-blogpost]: https://hungryjireh.github.io/portfolio/portfolio/2019/07/21/aapl-stock-news.html
+[mainwebsite-blogpost]: https://hungryjireh.github.io/portfolio/portfolio/2019/08/20/ikfmain.html
 [currency-website]: https://currency-prediction.com
 [elementor]: https://elementor.com/
 [currency-dev-area]: https://ikfcurrdev.wpengine.com
