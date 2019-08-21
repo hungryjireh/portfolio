@@ -1,0 +1,86 @@
+---
+layout: post_update
+title:  "Gold-Prediction.com Website Redesign"
+date:   2019-08-20 22:35:40 +0300
+categories: portfolio
+img_title: ikfgold_thumbnail.png
+author: Jireh
+---
+
+After redesigning the [Apple Stock News website][apple-blogpost], the [I Know First main website][mainwebsite-blogpost] and the [Currency-Prediction.com][currency-blogpost] website, I was then tasked to redesigned the Gold Prediction website of the company. The current live main website can be found [here][gold-website].
+
+In terms of design, most of it is very similar to the Apple Stock News website. One addition was that of the commodities tickers above the hero banner on the "Home" page of the website. Since its performance did not affect the speed of the website significantly, it is probably something that I'd add to the other redesigned websites as well.
+
+The different pages which I had designed using [Elementor][elementor] can be found below. The website is currently still undergoing review, and it can be found [here][gold-dev-area].
+
+---
+&nbsp;
+
+**1. Home Page**  
+&nbsp;
+![Home Page](/portfolio/assets/img/ikfgold/ikfgold_home.png)  
+
+{:start="2"}
+**2. About Page** 
+&nbsp;
+![About Page](/portfolio/assets/img/ikfgold/ikfgold_about.png)  
+
+{:start="3"}
+**3. Algorithm Page** 
+&nbsp;
+![Algorithm Page](/portfolio/assets/img/ikfgold/ikfgold_algorithm.png) 
+
+{:start="4"}
+**4. Analyst Reports Page** 
+&nbsp;
+![Analyst Reports Page](/portfolio/assets/img/ikfgold/ikfgold_analystreports.png)  
+
+{:start="5"}
+**5. Forecast Articles Page** 
+&nbsp;
+![Forecast Articles Page](/portfolio/assets/img/ikfgold/ikfgold_forecastarticles.png) 
+
+{:start="6"}
+**6. Archives Page** 
+&nbsp;
+![Archives Page](/portfolio/assets/img/ikfgold/ikfgold_archives.png)  
+
+{:start="7"}
+**7. Reading our Forecasts Page** 
+&nbsp;
+![Forecasts Page](/portfolio/assets/img/ikfgold/ikfgold_forecasts.png)  
+
+{:start="8"}
+**8. Pricing Page** 
+&nbsp;
+![Pricing Page](/portfolio/assets/img/ikfgold/ikfgold_pricing.png)  
+
+{:start="9"}
+**9. FAQ Page** 
+&nbsp;
+![FAQ Page](/portfolio/assets/img/ikfgold/ikfgold_faq.png)  
+
+{:start="10"}
+**10. Careers Page** 
+&nbsp;
+![Careers Page](/portfolio/assets/img/ikfgold/ikfgold_careers.png)  
+
+{:start="11"}
+**11. Team Page** 
+&nbsp;
+![Team Page](/portfolio/assets/img/ikfcurrency/ikfcurrency_team.png) 
+
+{:start="12"}
+**12. News Page** 
+&nbsp;
+![News Page](/portfolio/assets/img/ikfgold/ikfgold_news.png) 
+
+{:start="13"}
+**13. Blog Post Sample Page** 
+&nbsp;
+![Blog Post Page](/portfolio/assets/img/ikfgold/ikfgold_blogpost.png) 
+
+[apple-blogpost]: https://hungryjireh.github.io/portfolio/portfolio/2019/07/21/aapl-stock-news.html
+[gold-website]: https://gold-prediction.com
+[elementor]: https://elementor.com/
+[gold-dev-area]: https://goldpredictdev.wpengine.com
