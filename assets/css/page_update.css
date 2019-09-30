@@ -661,6 +661,10 @@ table {
 /**
  * Portfolio Page
  */
+
+ .portfolio-container {
+  margin-bottom: 30px;
+}
  .portfolio-desc {
    text-align: center;
    font-style: italic;

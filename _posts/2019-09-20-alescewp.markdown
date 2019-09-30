@@ -1,0 +1,61 @@
+---
+layout: post_update
+title:  "ALESCE Website Redesign"
+date:   2019-09-20 20:04:50 +0800
+categories: portfolio
+img_title: alescewp-thumbnail.png
+author: Jireh
+---
+
+As part of our efforts to increase the usability of our website for both users and team members, we made the decision to move the website to Wordpress, which has a fantastic CMS for the backend, both for content and for e-commerce functionality. We used Elementor to design the web pages, and Woocommerce to support our e-commerce arm. 
+
+A live version of this website can be found at [https://www.alesce.co][alesce].
+
+---
+&nbsp;
+
+**1. Home Page**  
+&nbsp;
+![Home Page](/portfolio/assets/img/alescewp/alescewp-home.png) 
+
+{:start="2"}
+**2. About Page**  
+&nbsp;
+![About Page](/portfolio/assets/img/alescewp/alescewp-about.png) 
+
+{:start="3"}
+**3. Team Page**  
+&nbsp;
+![Team Page](/portfolio/assets/img/alescewp/alescewp-team.png) 
+
+{:start="4"}
+**4. Shop Page**  
+&nbsp;
+![Shop Page](/portfolio/assets/img/alescewp/alescewp-shop.png)  
+
+{:start="5"}
+**5. Shop Item Page**  
+&nbsp;
+![Shop Item Page](/portfolio/assets/img/alescewp/alescewp-shopitem.png)  
+
+{:start="6"}
+**6. Blog Page**  
+&nbsp;
+![Blog Page](/portfolio/assets/img/alescewp/alescewp-blog.png)   
+
+{:start="7"}
+**7. Blog Post Page**  
+&nbsp;
+![Blog Post Page](/portfolio/assets/img/alescewp/alescewp-blogpost.png)  
+
+{:start="8"}
+**8. Contact Page**  
+&nbsp;
+![Contact Page](/portfolio/assets/img/alescewp/alescewp-contact.png)  
+
+{:start="9"}
+**9. Account Page**  
+&nbsp;
+![Account Page](/portfolio/assets/img/alescewp/alescewp-account.png)  
+
+[alesce]: https://www.alesce.co
