@@ -443,8 +443,13 @@ table {
     margin-right: auto;
   }
 
+  #banner-image-container {
+    display: inline-block;
+  }
+
   #banner-image {
-    padding-right: 100px;
+    width: 75%;
+    padding-left: 100px;
   }
 
   .home-content-text {
@@ -453,16 +458,6 @@ table {
     margin-bottom: 50px;
   }
 
-}
-
-#banner-image {
-  width: 288px;
-  height: 346px;
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 100px;
 }
 
 .page-heading {
